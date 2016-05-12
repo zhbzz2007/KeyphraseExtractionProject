@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # -*- coding: GBK -*-
 
+import os
 from Classifier.NaiveBayes import NBClassifier
 from time import time
 import csv
@@ -110,8 +111,8 @@ class KeyphraseExtractionClass(object):
 
 def test():
     begin = time()
-    srcFile = "Data\\test2.csv"
-    dstFile = "Result\\result.txt"
+    srcFile = os.path.join("Data","test2.csv")
+    dstFile = os.path.join("Result","result.txt")
     keyphraseNum = 10
     KeyphraseExtractionObj = KeyphraseExtractionClass()
     KeyphraseExtractionObj.keyphraseExtractionBasedNB(srcFile,dstFile,keyphraseNum)
